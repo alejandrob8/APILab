@@ -58,7 +58,7 @@ public class AppoinmentController {
 		} catch (Exception e) {
 			throw new NotFoundException("Insertion failed");
 		}
-		throw new CreatedException("Insertion sussccesful");
+		throw new CreatedException("Insertion successful");
 	}
 
 	@PutMapping

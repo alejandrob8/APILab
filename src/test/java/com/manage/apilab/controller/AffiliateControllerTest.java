@@ -125,7 +125,7 @@ class AffiliateControllerTest {
 				.content(objectMapper.writeValueAsString(affiliateDTO)))
 				.andExpect(status().isCreated()).andDo(print())
 				.andExpect(jsonPath("$.statusCode", is(201)))
-				.andExpect(jsonPath("$.message", is("Insertion sussccesful")));
+				.andExpect(jsonPath("$.message", is("Insertion successful")));
 	}
 
 	@Test

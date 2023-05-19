@@ -27,9 +27,6 @@ public class Appoinment {
 	@JsonFormat(pattern = "dd/MM/yyyy", shape = Shape.STRING)
 	private LocalDate date;
 
-	@Column(name = "description")
-	private String description;
-
 	@Column(name = "hour")
 	@JsonFormat(pattern = "HH:mm", shape = Shape.STRING)
 	private LocalTime hour;
@@ -60,14 +57,6 @@ public class Appoinment {
 		this.date = date;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
 	public LocalTime getHour() {
 		return hour;
 	}
@@ -96,12 +85,10 @@ public class Appoinment {
 		super();
 	}
 
-	public Appoinment(Integer id, LocalDate date, String description, LocalTime hour, Test idTest,
-			Affiliate idAffiliatte) {
+	public Appoinment(Integer id, LocalDate date, LocalTime hour, Test idTest, Affiliate idAffiliatte) {
 		super();
 		this.id = id;
 		this.date = date;
-		this.description = description;
 		this.hour = hour;
 		this.idTest = idTest;
 		this.idAffiliatte = idAffiliatte;

@@ -11,7 +11,6 @@ public class AppoinmentDTOMap implements Mapper<AppoinmentDTO, Appoinment> {
 	public Appoinment map(AppoinmentDTO input) {
 		Appoinment appoinment = new Appoinment();
 		appoinment.setDate(input.getDate());
-		appoinment.setDescription(input.getDescription());
 		appoinment.setHour(input.getHour());
 		appoinment.setIdTest(input.getIdTest());
 		appoinment.setIdAffiliatte(input.getIdAffiliate());

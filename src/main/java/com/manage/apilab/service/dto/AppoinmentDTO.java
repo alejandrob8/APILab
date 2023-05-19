@@ -14,8 +14,6 @@ public class AppoinmentDTO {
 	@JsonFormat(pattern = "dd/MM/yyyy", shape = Shape.STRING)
 	private LocalDate date;
 
-	private String description;
-
 	@JsonFormat(pattern = "HH:mm", shape = Shape.STRING)
 	private LocalTime hour;
 
@@ -31,14 +29,6 @@ public class AppoinmentDTO {
 
 	public void setDate(LocalDate date) {
 		this.date = date;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
 	}
 
 	public LocalTime getHour() {
@@ -65,10 +55,9 @@ public class AppoinmentDTO {
 		this.idAffiliate = idAffiliate;
 	}
 
-	public AppoinmentDTO(LocalDate date, String description, LocalTime hour, Test idTest, Affiliate idAffiliate) {
+	public AppoinmentDTO(LocalDate date, LocalTime hour, Test idTest, Affiliate idAffiliate) {
 		super();
 		this.date = date;
-		this.description = description;
 		this.hour = hour;
 		this.idTest = idTest;
 		this.idAffiliate = idAffiliate;

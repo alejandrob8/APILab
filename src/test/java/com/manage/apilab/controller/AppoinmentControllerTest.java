@@ -74,7 +74,7 @@ class AppoinmentControllerTest {
 		List<Appoinment> listAppoinments = new ArrayList<>();
 		
 		for (int i = 1; i <= 2; i++) {
-			listAppoinments.add(new Appoinment(i, LocalDate.parse("2001-01-01"), "Prueba Appoinment "+i, LocalTime.parse("08:18"), test, affiliate));
+			listAppoinments.add(new Appoinment(i, LocalDate.parse("2001-01-01"), LocalTime.parse("08:18"), test, affiliate));
 			
 		}
 
@@ -101,7 +101,7 @@ class AppoinmentControllerTest {
 		test.setName("Test 1");
 		test.setDescription("Prueba test 1");
 		
-		Appoinment appoinment = new Appoinment(1, LocalDate.parse("2001-01-01"), "Prueba Appoinment 1", LocalTime.parse("08:18"), test, affiliate);
+		Appoinment appoinment = new Appoinment(1, LocalDate.parse("2001-01-01"), LocalTime.parse("08:18"), test, affiliate);
 
 		Integer id = affiliate.getId();
 
@@ -110,7 +110,6 @@ class AppoinmentControllerTest {
 		mockMvc.perform(get("/api/controller/appoinments/{id}", id).contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk()).andDo(print())
 				.andExpect(jsonPath("$.id", is(1)))
-				.andExpect(jsonPath("$.description", is("Prueba Appoinment 1")))
 				.andExpect(jsonPath("$.id_test.id", is(1)))
 				.andExpect(jsonPath("$.id_test.name", is("Test 1")))
 				.andExpect(jsonPath("$.id_affiliate.id", is(1)))
@@ -146,7 +145,7 @@ class AppoinmentControllerTest {
 		test.setName("Test 1");
 		test.setDescription("Prueba test 1");
 		
-		AppoinmentDTO appoinmentDTO = new AppoinmentDTO(LocalDate.parse("2001-01-01"), "Prueba Appoinment 1", LocalTime.parse("08:18"), test, affiliate);
+		AppoinmentDTO appoinmentDTO = new AppoinmentDTO(LocalDate.parse("2001-01-01"), LocalTime.parse("08:18"), test, affiliate);
 		
 		Appoinment postAppoinment = mapper.map(appoinmentDTO);
 
@@ -157,7 +156,7 @@ class AppoinmentControllerTest {
 				.andExpect(status().isCreated())
 				.andDo(print())
 				.andExpect(jsonPath("$.statusCode", is(201)))
-				.andExpect(jsonPath("$.message", is("Insertion sussccesful")));
+				.andExpect(jsonPath("$.message", is("Insertion successful")));
 
 	}
 	
@@ -176,7 +175,7 @@ class AppoinmentControllerTest {
 		test.setName("Test 1");
 		test.setDescription("Prueba test 1");
 		
-		Appoinment appoinment = new Appoinment(1, LocalDate.parse("2001-01-01"), "Prueba Appoinment 1", LocalTime.parse("08:18"), test, affiliate);
+		Appoinment appoinment = new Appoinment(1, LocalDate.parse("2001-01-01"), LocalTime.parse("08:18"), test, affiliate);
 
 		Integer id = appoinment.getId();
 
@@ -204,7 +203,7 @@ class AppoinmentControllerTest {
 		test.setName("Test 1");
 		test.setDescription("Prueba test 1");
 		
-		Appoinment appoinment = new Appoinment(1, LocalDate.parse("2001-01-01"), "Prueba Appoinment 1", LocalTime.parse("08:18"), test, affiliate);
+		Appoinment appoinment = new Appoinment(1, LocalDate.parse("2001-01-01"), LocalTime.parse("08:18"), test, affiliate);
 
 		Integer id = appoinment.getId();
 
@@ -234,7 +233,7 @@ class AppoinmentControllerTest {
 		List<Appoinment> listByDate = new ArrayList<>();
 		
 		for (int i = 1; i <= 2; i++) {
-			listByDate.add(new Appoinment(i, LocalDate.parse("2001-01-01"), "Prueba Appoinment "+i, LocalTime.parse("08:18"), test, affiliate));
+			listByDate.add(new Appoinment(i, LocalDate.parse("2001-01-01"), LocalTime.parse("08:18"), test, affiliate));
 		}
 		
 		LocalDate date = LocalDate.parse("2001-01-01");
@@ -267,7 +266,7 @@ class AppoinmentControllerTest {
 		List<Appoinment> listByAffiliate = new ArrayList<>();
 		
 		for (int i = 1; i <= 2; i++) {
-			listByAffiliate.add(new Appoinment(i, LocalDate.parse("2001-01-01"), "Prueba Appoinment "+i, LocalTime.parse("08:18"), test, affiliate));
+			listByAffiliate.add(new Appoinment(i, LocalDate.parse("2001-01-01"), LocalTime.parse("08:18"), test, affiliate));
 		}
 
 		Integer idAffiliatte = 1;
