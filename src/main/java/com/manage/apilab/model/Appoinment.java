@@ -32,12 +32,12 @@ public class Appoinment {
 	private LocalTime hour;
 
 	@ManyToOne
-	@JsonProperty(value = "id_test")
+	@JsonProperty(value = "idTest")
 	@JoinColumn(name = "id_test")
 	private Test idTest;
 
 	@ManyToOne
-	@JsonProperty(value = "id_affiliate")
+	@JsonProperty(value = "idAffiliate")
 	@JoinColumn(name = "id_affiliate")
 	private Affiliate idAffiliatte;
 

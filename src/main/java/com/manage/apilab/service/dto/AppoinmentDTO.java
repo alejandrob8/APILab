@@ -17,10 +17,10 @@ public class AppoinmentDTO {
 	@JsonFormat(pattern = "HH:mm", shape = Shape.STRING)
 	private LocalTime hour;
 
-	@JsonProperty(value = "id_test")
+	@JsonProperty(value = "idTest")
 	private Test idTest;
 
-	@JsonProperty(value = "id_affiliate")
+	@JsonProperty(value = "idAffiliate")
 	private Affiliate idAffiliate;
 
 	public LocalDate getDate() {
